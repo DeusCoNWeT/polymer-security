@@ -39,12 +39,13 @@ La configuración de la extensión permite establecer parametros relacionados co
 Se utiliza un servidor entre las peticiones para identificar los componentes con un determinado experimento.
 
 ```json
+
 {
-	"urls": [
-		"https://accounts.google.com/*",
-		"https://www.facebook.com/*",
-		"https://api.pinterest.com/*"
-	],
+  "urls": [
+    "https://accounts.google.com/*",
+    "https://www.facebook.com/*",
+    "https://api.pinterest.com/*"
+  ],
   "domains":{
     "https://accounts.google.com": {
       "profile": "read",
@@ -74,12 +75,12 @@ Se utiliza un servidor entre las peticiones para identificar los componentes con
       "min_writes": 0
     }
   },
-	"origin": [
-		"http://localhost:8000",
-		"https://centauro.ls.fi.upm.es"
-	],
-	"experiment_id": 1497436704983,
-	"penalization": 0.5
+  "origin": [
+    "http://localhost:8000",
+    "https://centauro.ls.fi.upm.es"
+  ],
+  "experiment_id": 1497436704983,
+  "penalization": 0.5
 }
 ```
 
@@ -99,6 +100,8 @@ El programa permite como entrada un fichero json, usando la configuracion `-c` o
   "files":[
     "bower_components/google-login/demo.html",
     "bower_components/login-facebook/demo.html"
-  ]
+  ],
+  "host":polymer-security",
+  "timeout":5000
 }
 ```
