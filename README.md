@@ -19,6 +19,7 @@ La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en 
 **Ejemplo**
 ``` bash
   $: ./security_analyzer bower_components/google-login/demo.html
+  $: ./security_analyzer -c config.json
 ```
 
 ## Configuración
@@ -34,7 +35,8 @@ La configuración de la extensión permite establecer parametros relacionados co
 | origin        | Lista de urls que de las que pueden venir las peticiones de tokens. Se basa en los callbacks de las llamadas      |
 | experiment_id | (Autogenerado) Identificador del experimento que se esta llevando a cabo                                          |
 | penalization  | (Opcional) Penalización extra que tienen las sobre escrituras. Por defecto 0.5                                    |
-| mixpanelToken | (Opcional) Token de mixpanel que se utiliza para mandar los resultados                                            |
+| mixpanelToken | (Opcional) Token de mixpanel que se utiliza para mandar los resultados                                        |
+
 ***NOTA***
 Se utiliza un servidor entre las peticiones para identificar los componentes con un determinado experimento.
 
