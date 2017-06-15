@@ -1,7 +1,7 @@
 # Polymer scopes analyzer
 
 Herramienta que permite analizar los scopes usando para ello una extensión de chrome y Selenium para abrir el navegador.
-La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en la configuración será añadida antes de ejecutar.
+La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en la configuración serán añadidos antes de ejecutar.
 
 
 ## Funcionamiento
@@ -25,8 +25,7 @@ La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en 
 
 ### Extensión
 
-La configuración de la extensión permite establecer parametros relacionados con los origienes que vamos a considerar en las peticiones
-para mandar datos a mixpanel (por ejemplo la página http://localhost;8080). La configuración que permite es la siguiente:
+La configuración de la extensión permite establecer parametros relacionados con los origienes que vamos a considerar en las peticiones para mandar datos a mixpanel (por ejemplo la página http://localhost;8080). La configuración que permite es la siguiente:
 
 | Campo         | Explicación                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
