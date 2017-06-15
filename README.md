@@ -101,7 +101,7 @@ El programa permite como entrada un fichero json, usando la configuracion `-c` o
     "bower_components/google-login/demo.html",
     "bower_components/login-facebook/demo.html"
   ],
-  "host":polymer-security",
+  "host":"polymer-security",
   "timeout":5000
 }
 ```
