@@ -1,0 +1,43 @@
+{
+	"urls": [
+		"https://accounts.google.com/*",
+		"https://www.facebook.com/*",
+		"https://api.pinterest.com/*"
+	],
+	"domain": {
+		"https://accounts.google.com": {
+			"profile": "read",
+			"email": "read",
+			"openid": "read",
+			"https://www.googleapis.com/auth/plus.login": "read",
+			"https://www.googleapis.com/auth/plus.me": "read",
+			"https://www.googleapis.com/auth/userinfo.email": "read",
+			"https://www.googleapis.com/auth/userinfo.profile": "read",
+			"https://www.googleapis.com/auth/contacts": "read",
+			"https://www.googleapis.com/auth/contacts.readonly": "read",
+			"min_reads": 1,
+			"min_writes": 0
+		},
+		"https://www.facebook.com": {
+			"public_profile": "read",
+			"read_stream": "read",
+			"min_reads": 2,
+			"min_writes": 0
+		},
+		"https://api.pinterest.com": {
+			"read_public": "read",
+			"write_public": "write",
+			"read_relationships": "read",
+			"write_relationships": "write",
+			"min_reads": 2,
+			"min_writes": 0
+		}
+	},
+	"origin": [
+		"http://localhost:8000",
+		"https://centauro.ls.fi.upm.es"
+	],
+	"experiment_id": 1497516408056,
+	"penalization": 0.5,
+	"mixpanelToken": "fe8c2e7967c3f1ed91fd664de30333c6"
+}
