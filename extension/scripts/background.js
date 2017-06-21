@@ -1,6 +1,7 @@
 var bkg = chrome.extension.getBackgroundPage();
 var SCOPE_MAPPING = {};
-var MAX_VALUE = 5;
+
+
 // Query params to JSON var
 function parseQuery(qstr) {
   var query = {};
@@ -39,8 +40,9 @@ function sendDataToMixpanel(results, params, domain) {
     console.log("TODO: Se deben guardar los datos", results, callback_url,SCOPE_MAPPING.experiment_id);
     var xhr = new XMLHttpRequest();
     var url = "https://centauro.ls.fi.upm.es:4444/security";
-    var penalization = SCOPE_MAPPING.penalization || 0.5;
-    var value = MAX_VALUE - (results.extra_reads/results.total) - (results.extra_writes/results.total) * penalization;
+    var penalization = SCOPE_MAPPING.penalization || 1.5;
+    var max_value = SCOPE_MAPPING.max_value || 5;
+    var value = max_value - (results.extra_reads/results.total) - (results.extra_writes/results.total) * penalization;
     var data = {
       results: results,
       value: value,

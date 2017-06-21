@@ -6,3 +6,6 @@ dist
 bower_components
 package
 .vscode
+pbower
+version.txt
+extension.crx

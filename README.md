@@ -71,7 +71,7 @@ Se utiliza un servidor entre las peticiones para identificar los componentes con
       "write_public": "write",
       "read_relationships": "read",
       "write_relationships": "write",
-      "min_reads": 2,
+      "min_reads": 2, 
       "min_writes": 0
     }
   },
