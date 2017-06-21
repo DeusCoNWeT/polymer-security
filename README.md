@@ -1,7 +1,7 @@
 # Polymer scopes analyzer
 
 Herramienta que permite analizar los scopes usando para ello una extensión de chrome y Selenium para abrir el navegador.
-La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en la configuración será añadida antes de ejecutar.
+La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en la configuración serán añadidos antes de ejecutar.
 
 
 ## Funcionamiento
@@ -19,14 +19,14 @@ La extensión es empaquetada en tiempo de ejecución, por lo que los cambios en 
 **Ejemplo**
 ``` bash
   $: ./security_analyzer bower_components/google-login/demo.html
+  $: ./security_analyzer -c config.json
 ```
 
 ## Configuración
 
 ### Extensión
 
-La configuración de la extensión permite establecer parametros relacionados con los origienes que vamos a considerar en las peticiones
-para mandar datos a mixpanel (por ejemplo la página http://localhost;8080). La configuración que permite es la siguiente:
+La configuración de la extensión permite establecer parametros relacionados con los origienes que vamos a considerar en las peticiones para mandar datos a mixpanel (por ejemplo la página http://localhost;8080). La configuración que permite es la siguiente:
 
 | Campo         | Explicación                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
@@ -35,17 +35,19 @@ para mandar datos a mixpanel (por ejemplo la página http://localhost;8080). La 
 | origin        | Lista de urls que de las que pueden venir las peticiones de tokens. Se basa en los callbacks de las llamadas      |
 | experiment_id | (Autogenerado) Identificador del experimento que se esta llevando a cabo                                          |
 | penalization  | (Opcional) Penalización extra que tienen las sobre escrituras. Por defecto 0.5                                    |
-| mixpanelToken | (Opcional) Token de mixpanel que se utiliza para mandar los resultados                                            |
+| mixpanelToken | (Opcional) Token de mixpanel que se utiliza para mandar los resultados                                        |
+
 ***NOTA***
 Se utiliza un servidor entre las peticiones para identificar los componentes con un determinado experimento.
 
 ```json
+
 {
-	"urls": [
-		"https://accounts.google.com/*",
-		"https://www.facebook.com/*",
-		"https://api.pinterest.com/*"
-	],
+  "urls": [
+    "https://accounts.google.com/*",
+    "https://www.facebook.com/*",
+    "https://api.pinterest.com/*"
+  ],
   "domains":{
     "https://accounts.google.com": {
       "profile": "read",
@@ -75,12 +77,12 @@ Se utiliza un servidor entre las peticiones para identificar los componentes con
       "min_writes": 0
     }
   },
-	"origin": [
-		"http://localhost:8000",
-		"https://centauro.ls.fi.upm.es"
-	],
-	"experiment_id": 1497436704983,
-	"penalization": 0.5
+  "origin": [
+    "http://localhost:8000",
+    "https://centauro.ls.fi.upm.es"
+  ],
+  "experiment_id": 1497436704983,
+  "penalization": 0.5
 }
 ```
 
@@ -100,6 +102,8 @@ El programa permite como entrada un fichero json, usando la configuracion `-c` o
   "files":[
     "bower_components/google-login/demo.html",
     "bower_components/login-facebook/demo.html"
-  ]
+  ],
+  "host":"polymer-security",
+  "timeout":5000
 }
 ```
