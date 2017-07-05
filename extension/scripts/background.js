@@ -42,7 +42,7 @@ function sendDataToMixpanel(results, params, domain) {
     var url = "https://centauro.ls.fi.upm.es:4444/security";
     var penalization = SCOPE_MAPPING.penalization || 1.5;
     var max_value = SCOPE_MAPPING.max_value || 5;
-    var value = max_value - (results.extra_reads/results.total) - (results.extra_writes/results.total) * penalization;
+    var value = max_value - (results.extra_reads/results.max_reads) - (results.extra_writes/results.max_writes) * penalization;
     var data = {
       results: results,
       value: value,
@@ -98,8 +98,16 @@ var requestCallback = function (details) {
   results.extra_reads = results.total_reads -results.min_reads;
   results.extra_writes = results.total_writes -results.min_writes;
   
-  results.total = permissions.length;
+  results.max_reads = 0;
+  results.max_writes = 0;
 
+  var domain_scopes = SCOPE_MAPPING.domain[domain];
+  for (var perm in domain_scopes) {
+    if ( domain_scopes.hasOwnProperty(perm) ) {
+      if (domain_scopes[perm] == "read") results.max_reads++;
+      if (domain_scopes[perm] == "write") results.max_writes++;
+    }
+  }
   sendDataToMixpanel(results, params, domain);
 };
 

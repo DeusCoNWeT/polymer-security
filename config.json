@@ -1,6 +1,6 @@
 {
   "files":[
-    "bower_components/google-login-stable/demo/index.html",
-    "bower_components/google-login-security/demo/index.html"
+    "bower_components/pinterest-login-security/demo/index.html",
+    "bower_components/pinterest-login-stable/demo/index.html"
   ]
 }

@@ -2,7 +2,8 @@
 	"urls": [
 		"https://accounts.google.com/*",
 		"https://www.facebook.com/*",
-		"https://api.pinterest.com/*"
+		"https://api.pinterest.com/*",
+		"https://www.reddit.com/*"
 	],
 	"domain": {
 		"https://accounts.google.com": {
@@ -289,13 +290,44 @@
 			"write_relationships": "write",
 			"min_reads": 2,
 			"min_writes": 0
+		},
+		"https://www.reddit.com": {
+			"account": "write",
+			"creddits": "write",
+			"livemanage": "write",
+			"modcontributors": "write",
+			"identity": "read",
+			"edit": "write",
+			"flair": "read",
+			"history": "read",
+			"modconfig": "write",
+			"modflair": "write",
+			"modlog": "read",
+			"modmail": "write",
+			"modothers": "write",
+			"modposts": "write",
+			"modself": "write",
+			"modwiki": "write",
+			"mysubreddits": "read",
+			"privatemessages": "write",
+			"read": "read",
+			"report": "write",
+			"save": "write",
+			"submit": "write",
+			"subscribe": "write",
+			"vote": "write",
+			"wikiedit": "write",
+			"wikiread": "read",
+			"min_reads": 2,
+			"min_writes": 0
 		}
 	},
 	"origin": [
-		"http://localhost:8000",
+		"https://localhost",
+		"http://localhost",
 		"https://centauro.ls.fi.upm.es"
 	],
-	"experiment_id": 1498031775290,
+	"experiment_id": 1499251337759,
 	"penalization": 1.5,
 	"mixpanelToken": "fe8c2e7967c3f1ed91fd664de30333c6"
 }
