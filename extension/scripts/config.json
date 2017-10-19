@@ -325,9 +325,10 @@
 	"origin": [
 		"https://localhost",
 		"http://localhost",
-		"https://centauro.ls.fi.upm.es"
+		"https://centauro.ls.fi.upm.es",
+		"http://localhost.centauro.ls.fi.upm.es"
 	],
-	"experiment_id": 1499251337759,
+	"experiment_id": 1508422765395,
 	"penalization": 1.5,
 	"mixpanelToken": "fe8c2e7967c3f1ed91fd664de30333c6"
 }

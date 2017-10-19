@@ -31,7 +31,8 @@ if (program.config) {
 }
 // DEFAULT CONFIGURATION
 CONFIG.timeout = CONFIG.timeout || 5000;
-CONFIG.host = CONFIG.host || __dirname;
+CONFIG.host = CONFIG.host || '0.0.0.0';
+CONFIG.base = CONFIG.base || __dirname;
 
 // IF NOT CONFIG or FILE, RETURN HELp
 if (!TEST_FILE && !CONFIG.files) {
@@ -57,7 +58,7 @@ function runTest(file, server) {
   return new Promise(function (resolve, reject) {
     publishExperiment(file, EXPERIMENT_ID).then(function () {
       var driver = new WebDriver();
-      var url = "http://localhost:" + server.port + '/' + file;
+      var url = 'http://' + CONFIG.host +':' + server.port + '/' + file;
       var opened = driver.open(url).then(function () {
         setTimeout(function () {
           driver.close().then(resolve);

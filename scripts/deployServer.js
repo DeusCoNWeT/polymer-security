@@ -21,8 +21,8 @@
       
       return new Promise(function (resolve, reject) {
         
-        this.server = connect().use(serveStatic(this.host)).listen(this.port, function(){
-          console.log("El servidor esta ejecutando");
+        this.server = connect().use(serveStatic(this.base)).listen(this.port, this.host, function(){
+          console.log('El servidor esta ejecutando');
           resolve();
         });
       }.bind(this));

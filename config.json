@@ -1,6 +1,6 @@
 {
   "files":[
-    "bower_components/pinterest-login-security/demo/index.html",
-    "bower_components/pinterest-login-stable/demo/index.html"
-  ]
+    "bower_components/facebook-login/demo/index.html"
+  ],
+  "host": "localhost.centauro.ls.fi.upm.es"
 }
