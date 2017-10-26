@@ -65,7 +65,7 @@ var requestCallback = function (details) {
   if (base_url.indexOf('?') == -1) return;
 
   // Split domain and query paramss
-  var split_url = base_url.match(/https?:[^?]*?(.*)/);
+  var split_url = base_url.match(/https?:\/\/[^\?]*\?(.*)/);
   var domain_regex = split_url[0].match(/(https?:\/\/[^\/]*).*/);
   var domain = domain_regex[1];
 
